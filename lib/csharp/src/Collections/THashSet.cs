@@ -28,7 +28,7 @@ using System.Runtime.Serialization;
 namespace Thrift.Collections
 {
 #if SILVERLIGHT
-    [DataContract]
+    //[DataContract]
 #else
     [Serializable]
 #endif
@@ -36,7 +36,7 @@ namespace Thrift.Collections
     {
 #if NET_2_0 || SILVERLIGHT
 #if SILVERLIGHT
-        [DataMember]
+        //[DataMember]
 #endif
         TDictSet<T> set = new TDictSet<T>();
 #else
@@ -89,12 +89,12 @@ namespace Thrift.Collections
 
 #if NET_2_0 || SILVERLIGHT
 #if SILVERLIGHT
-        [DataContract]
+        //[DataContract]
 #endif
         private class TDictSet<V> : ICollection<V>
         {
 #if SILVERLIGHT
-            [DataMember]
+            //[DataMember]
 #endif
             Dictionary<V, TDictSet<V>> dict = new Dictionary<V, TDictSet<V>>();
 

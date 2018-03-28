@@ -42,6 +42,6 @@ Global
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(MonoDevelopProperties) = preSolution
-		        StartupItem = Thrift.csproj
+		StartupItem = Thrift.csproj
 	EndGlobalSection
 EndGlobal

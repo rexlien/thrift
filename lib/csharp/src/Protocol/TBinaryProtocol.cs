@@ -156,24 +156,27 @@ namespace Thrift.Protocol
             WriteByte(b ? (sbyte)1 : (sbyte)0);
         }
 
-        private byte[] bout = new byte[1];
+
         public override void WriteByte(sbyte b)
         {
+            byte[] bout = new byte[1];
             bout[0] = (byte)b;
             trans.Write(bout, 0, 1);
         }
 
-        private byte[] i16out = new byte[2];
+
         public override void WriteI16(short s)
         {
+            byte[] i16out = new byte[2];
             i16out[0] = (byte)(0xff & (s >> 8));
             i16out[1] = (byte)(0xff & s);
             trans.Write(i16out, 0, 2);
         }
 
-        private byte[] i32out = new byte[4];
+
         public override void WriteI32(int i32)
         {
+            byte[] i32out = new byte[4];
             i32out[0] = (byte)(0xff & (i32 >> 24));
             i32out[1] = (byte)(0xff & (i32 >> 16));
             i32out[2] = (byte)(0xff & (i32 >> 8));
@@ -181,9 +184,10 @@ namespace Thrift.Protocol
             trans.Write(i32out, 0, 4);
         }
 
-        private byte[] i64out = new byte[8];
+        //private byte[] i64out = new byte[8];
         public override void WriteI64(long i64)
         {
+            byte[] i64out = new byte[8];
             i64out[0] = (byte)(0xff & (i64 >> 56));
             i64out[1] = (byte)(0xff & (i64 >> 48));
             i64out[2] = (byte)(0xff & (i64 >> 40));
