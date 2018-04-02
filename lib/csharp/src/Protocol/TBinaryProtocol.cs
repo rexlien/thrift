@@ -322,32 +322,36 @@ namespace Thrift.Protocol
             return ReadByte() == 1;
         }
 
-        private byte[] bin = new byte[1];
+       
         public override sbyte ReadByte()
         {
+            byte[] bin = new byte[1];
             ReadAll(bin, 0, 1);
             return (sbyte)bin[0];
         }
 
-        private byte[] i16in = new byte[2];
+
         public override short ReadI16()
         {
+            byte[] i16in = new byte[2];
             ReadAll(i16in, 0, 2);
             return (short)(((i16in[0] & 0xff) << 8) | ((i16in[1] & 0xff)));
         }
 
-        private byte[] i32in = new byte[4];
+       
         public override int ReadI32()
         {
+            byte[] i32in = new byte[4];
             ReadAll(i32in, 0, 4);
             return (int)(((i32in[0] & 0xff) << 24) | ((i32in[1] & 0xff) << 16) | ((i32in[2] & 0xff) << 8) | ((i32in[3] & 0xff)));
         }
 
 #pragma warning disable 675
 
-        private byte[] i64in = new byte[8];
+
         public override long ReadI64()
         {
+            byte[] i64in = new byte[8];
             ReadAll(i64in, 0, 8);
             unchecked {
               return (long)(
